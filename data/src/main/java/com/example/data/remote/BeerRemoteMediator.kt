@@ -8,6 +8,7 @@ import androidx.room.withTransaction
 import com.example.data.local.BeerDatabase
 import com.example.data.local.BeerEntity
 import com.example.data.mappers.toBeerEntity
+import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -36,6 +37,7 @@ class BeerRemoteMediator(
                     }
                 }
             }
+            delay(2000L)
             val beers = beerApi.getBeers(
                 page = loadKey,
                 pageCount = state.config.pageSize

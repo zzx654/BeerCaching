@@ -7,7 +7,7 @@ interface BeerApi {
 
     @GET("beers")
     suspend fun getBeers(
-        @Query("pages") page: Int,
+        @Query("page") page: Int,
         @Query("per_page") pageCount: Int
     ): List<BeerDto>
 
